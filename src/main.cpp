@@ -6,6 +6,10 @@
 void setup()
 {
     Serial.begin(9600);
+    while(!Serial.dtr())
+    {
+        delay(100);
+    }
 }
 void loop()
 {
