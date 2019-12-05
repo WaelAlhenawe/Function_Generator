@@ -37,7 +37,7 @@ void loop()
 		Serial.println("3 - Set the frequency.");
         Serial.printf("Enter the frequancy (%d - %d Hz): ", MIN_FREQUENCY, MAX_FREQUENCY);
         frequancy_got = atoi(readFrequency(buffer));
-        Serial.printf("%d", frequancy_got);
+        // Serial.printf("%d", frequancy_got);
         Serial.print("\n\n");
     }
 }

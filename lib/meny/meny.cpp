@@ -55,12 +55,12 @@ while (i < BUFFER_SIZE)
         
     }
 
+
+}
+
     buffer[BUFFER_SIZE -1 ]= 0;
     Serial.clear();
 
     return buffer;
-
-}
-
 
 }
