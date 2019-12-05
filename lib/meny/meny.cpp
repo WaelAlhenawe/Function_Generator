@@ -6,7 +6,7 @@ char readCommand()
 {
     char command = 0;
 
-    while ((command != 1) && (command != 2) && (command != '\n'))
+    while ((command != '1') && (command != '2') && (command != '\n'))
     {
         if (Serial.available())
         {
@@ -14,7 +14,7 @@ char readCommand()
         }
     }
 
-    Serial.printf("%d\n\n", command);
+    Serial.printf("%c\n\n", command);
     
     return command;
 }

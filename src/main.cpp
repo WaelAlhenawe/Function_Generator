@@ -1,5 +1,5 @@
 #include <meny.h>
-#include <Arduino.h>
+
 
 #define BUFFERSIZE 10
 
@@ -16,7 +16,7 @@ void loop()
     char menu = readCommand();
     if (menu == '1')
     {
-        char buffer[BUFFERSIZE] = {};
+        //char buffer[BUFFERSIZE] = {};
 		Serial.println("1 - Sine waveform chosen.");
         Serial.print("\n\n");
     }
