@@ -1,6 +1,5 @@
-#include <datetime.h>
+#include <meny.h>
 #include <Arduino.h>
-#include <TimeLib.h>
 
 #define BUFFERSIZE 10
 
@@ -19,13 +18,11 @@ void loop()
     {
         char buffer[BUFFERSIZE] = {};
 		Serial.println("1 - Sine waveform chosen.");
-        void waveCh0_select();
         Serial.print("\n\n");
     }
     else if (menu == '2')
     {
 		Serial.println("2 - Triangle waveform chosen.");
-        void waveCh0_select();
         Serial.print("\n\n");
     }
 }
