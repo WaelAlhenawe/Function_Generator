@@ -7,14 +7,13 @@
 void setup()
 {
     Serial.begin(9600);
-    while (!Serial.dtr())
-    {
-        delay(100);
-    }
 }
 void loop()
 {
-    Serial.println("Enter desired waveform: 1 - Sine wave  or  2 - Triangle wave ");
+    Serial.println("Enter desired waveform: ");
+    Serial.println("1 - Sine wave: ");
+    Serial.println("2 - Triangle wave ");
+    Serial.println("Enter command: ");
     char menu = readCommand();
     if (menu == '1')
     {
