@@ -8,8 +8,9 @@
             "includePath": [
                 "/home/wael/Documents/PlatformIO/Projects/Function_Generator/include",
                 "/home/wael/Documents/PlatformIO/Projects/Function_Generator/src",
-                "/home/wael/Documents/PlatformIO/Projects/Function_Generator/lib/meny",
+                "/home/wael/Documents/PlatformIO/Projects/Function_Generator/lib/menu",
                 "/home/wael/.platformio/packages/framework-arduinoteensy/cores/teensy3",
+                "/home/wael/Documents/PlatformIO/Projects/Function_Generator/lib/function",
                 "/home/wael/.platformio/packages/framework-arduinoteensy/libraries/ADC",
                 "/home/wael/.platformio/packages/framework-arduinoteensy/libraries/AccelStepper/src",
                 "/home/wael/.platformio/packages/framework-arduinoteensy/libraries/Adafruit_CC3000",
@@ -117,8 +118,9 @@
                 "path": [
                     "/home/wael/Documents/PlatformIO/Projects/Function_Generator/include",
                     "/home/wael/Documents/PlatformIO/Projects/Function_Generator/src",
-                    "/home/wael/Documents/PlatformIO/Projects/Function_Generator/lib/meny",
+                    "/home/wael/Documents/PlatformIO/Projects/Function_Generator/lib/menu",
                     "/home/wael/.platformio/packages/framework-arduinoteensy/cores/teensy3",
+                    "/home/wael/Documents/PlatformIO/Projects/Function_Generator/lib/function",
                     "/home/wael/.platformio/packages/framework-arduinoteensy/libraries/ADC",
                     "/home/wael/.platformio/packages/framework-arduinoteensy/libraries/AccelStepper/src",
                     "/home/wael/.platformio/packages/framework-arduinoteensy/libraries/Adafruit_CC3000",
@@ -228,7 +230,8 @@
                 "TEENSY35",
                 "USB_SERIAL",
                 "ARDUINO=10805",
-                "TEENSYDUINO=147",
+                "TEENSYDUINO=148",
+                "CORE_TEENSY",
                 "F_CPU=120000000L",
                 "LAYOUT_US_ENGLISH",
                 ""
