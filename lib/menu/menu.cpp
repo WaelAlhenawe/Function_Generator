@@ -1,4 +1,4 @@
-#include <meny.h>
+#include <menu.h>
 
 
 
@@ -6,11 +6,11 @@ char readCommand()
 {
     int command = '0';
 
-    while ((command != '1') && (command != '2') && (command != '3')&& (command != '\n'))
+    while ((command != WAVEFORM_OPTION) && (command != FREQUENCY_OPTION) && (command != INFORMATION_OPTION)&& (command != '\n'))
     {
         if (Serial.available())
         {
-            command = (Serial.read());
+            command = toupper(Serial.read());
         }
     }
 
@@ -19,22 +19,23 @@ char readCommand()
     return command;
 }
 
-// char readWaveCommand()
-// {
-//     int command = '0';
+char readWaveform()
+{
+    int command = '0';
 
-//     while ((command != '1') && (command != '2') && (command != '\n'))
-//     {
-//         if (Serial.available())
-//         {
-//             command = (Serial.read());
-//         }
-//     }
+    while ((command != SINE_WAVEFORM) && (command != TRIANGLE_WAVEFORM) && (command != '\n'))
+    {
+        if (Serial.available())
+        {
+            command = toupper(Serial.read());
+        }
+    }
 
-//     Serial.printf("%c\n\n", command);
+    Serial.printf("%c\n\n", command);
     
-//     return command;
-// }
+    return command;
+}
+
 char * readFrequency(char * buffer){
 
 uint8_t i = 0 ;
@@ -57,7 +58,6 @@ while (i < BUFFER_SIZE)
 
 
 }
-
     buffer[BUFFER_SIZE -1 ]= 0;
     Serial.clear();
 

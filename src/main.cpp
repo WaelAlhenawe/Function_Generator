@@ -1,43 +1,45 @@
-#include <meny.h>
+#include <menu.h>
+#include <Arduino.h>
 
-
-#define BUFFERSIZE 10
+uint8_t frequency = MIN_FREQUENCY;
+char waveform = TRIANGLE_WAVEFORM;
 
 void setup()
 {
     Serial.begin(9600);
-    while(!Serial.dtr())
-    {
-        delay(100);
-    }
 }
+
 void loop()
 {
-    Serial.println("Enter desired waveform: ");
-    Serial.println("1 - Sine wave: ");
-    Serial.println("2 - Triangle wave ");
-    Serial.println("3 - Set the frequency ");
-    Serial.println("Enter command: ");
+    Serial.printf("%c) Select the waveform\n", WAVEFORM_OPTION);
+    Serial.printf("%c) Set the frequency\n", FREQUENCY_OPTION);
+    Serial.printf("%c) Information\n", INFORMATION_OPTION);
+    Serial.print("Enter the command: ");
     char menu = readCommand();
+
     char buffer[BUFFER_SIZE] = {};
-    uint8_t frequancy_got = 0;
-    if (menu == '1')
+    if (menu == WAVEFORM_OPTION)
     {
-        //char buffer[BUFFERSIZE] = {};
-		Serial.println("1 - Sine waveform chosen.");
+        Serial.printf("Waveforms => %c) Sine, %c) Triangle: ", SINE_WAVEFORM, TRIANGLE_WAVEFORM);
+        waveform = readWaveform();
+        Serial.print("\n");
+    }
+    else if (menu == FREQUENCY_OPTION)
+    {
+        Serial.printf("Enter the frequency (%d - %d Hz): ", MIN_FREQUENCY, MAX_FREQUENCY);
+        frequency = atoi(readFrequency(buffer));
+        if (frequency < MIN_FREQUENCY)
+        {
+            frequency = MIN_FREQUENCY;
+        }
+        else if (frequency > MAX_FREQUENCY)
+        {
+            frequency = MAX_FREQUENCY;
+        }
         Serial.print("\n\n");
     }
-    if (menu == '2')
+    else if (menu == INFORMATION_OPTION)
     {
-		Serial.println("2 - Triangle waveform chosen.");
-        Serial.print("\n\n");
-    }
-    if (menu == '3')
-    {
-		Serial.println("3 - Set the frequency.");
-        Serial.printf("Enter the frequancy (%d - %d Hz): ", MIN_FREQUENCY, MAX_FREQUENCY);
-        frequancy_got = atoi(readFrequency(buffer));
-        // Serial.printf("%d", frequancy_got);
-        Serial.print("\n\n");
+        Serial.printf("Waveform: %s, Frequency: %d Hz\n\n", (waveform == SINE_WAVEFORM) ? "Sine" : "Triangle", frequency);
     }
 }
